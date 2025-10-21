@@ -19,3 +19,7 @@
   --color-primary: #9b5de0;
   --color-secondary: #d78fee;
 }
+
+a.active {
+  @apply text-accent underline;
+}
