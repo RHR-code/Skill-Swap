@@ -1,0 +1,74 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Python Programming",
+    "providerName": "Sarah Johnson",
+    "providerEmail": "sarah.j@codelearn.com",
+    "price": 45,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Introduction to Python: covering basic syntax, data structures, and simple scripts.",
+    "image": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1032",
+    "category": "Coding"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Advanced SEO Techniques",
+    "providerName": "Mark Webber",
+    "providerEmail": "markw@digitalboost.com",
+    "price": 85,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Mastering search engine optimization for high-ranking website traffic and conversions.",
+    "image": "https://plus.unsplash.com/premium_photo-1685210129009-501c75e96183?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870",
+    "category": "Marketing"
+  },
+  {
+    "skillId": 3,
+    "skillName": "French Language Level A1",
+    "providerName": "Éloïse Dubois",
+    "providerEmail": "eloise.d@lingua.fr",
+    "price": 30,
+    "rating": 4.7,
+    "slotsAvailable": 8,
+    "description": "Essential French for everyday conversation, focusing on grammar and vocabulary basics.",
+    "image": "https://images.unsplash.com/photo-1629095541529-b4ec151ff93d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=580",
+    "category": "Languages"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Introduction to Data Science",
+    "providerName": "Dr. Ben Carter",
+    "providerEmail": "ben.c@datasci.org",
+    "price": 99,
+    "rating": 4.5,
+    "slotsAvailable": 4,
+    "description": "Foundational concepts of data science, including statistics and machine learning overview.",
+    "image": "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=873",
+    "category": "Data & Analytics"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Watercolor Painting for Beginners",
+    "providerName": "Lisa Chen",
+    "providerEmail": "lisa.c@artzone.com",
+    "price": 25,
+    "rating": 4.8,
+    "slotsAvailable": 6,
+    "description": "Learn basic watercolor techniques, color mixing, and simple landscape painting.",
+    "image": "https://images.unsplash.com/photo-1625501134209-d7fcbdc85c72?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870",
+    "category": "Art & Design"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Public Speaking Confidence",
+    "providerName": "David Miller",
+    "providerEmail": "davidm@speechpro.net",
+    "price": 55,
+    "rating": 4.4,
+    "slotsAvailable": 3,
+    "description": "Techniques to overcome stage fright and deliver engaging, persuasive presentations.",
+    "image": "https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870",
+    "category": "Personal Development"
+  }
+]
