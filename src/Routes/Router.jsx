@@ -12,7 +12,11 @@ import Signup from "../pages/Signup";
 export const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" Component={MainLayout}>
-      <Route index={true} Component={Home} />
+      <Route
+        index={true}
+        loader={() => fetch("/skills.json")}
+        Component={Home}
+      />
       <Route path="/login" Component={Login} />
       <Route path="/signup" Component={Signup} />
       <Route path="/*" element={<div>Error 404 Page</div>} />

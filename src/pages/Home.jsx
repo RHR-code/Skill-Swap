@@ -1,7 +1,18 @@
 import React from "react";
+import HeroSlider from "../components/HeroSlider";
+import { useLoaderData } from "react-router";
 
 const Home = () => {
-  return <div>this is the home</div>;
+  const skillsData = useLoaderData();
+  console.log(skillsData);
+
+  return (
+    <div>
+      <div className="py-5 bg-base-300">
+        <HeroSlider skillsData={skillsData} />
+      </div>
+    </div>
+  );
 };
 
 export default Home;
