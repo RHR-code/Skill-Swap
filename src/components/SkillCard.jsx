@@ -3,9 +3,9 @@ import React from "react";
 const SkillCard = ({ skill }) => {
   const { skillName, image, price, rating } = skill;
   return (
-    <div className="bg-base-300 rounded-2xl flex flex-col gap-5">
+    <div className="bg-base-300 rounded-2xl flex flex-col justify-between ">
       <img
-        className="h-[250px] w-full object-cover rounded-2xl"
+        className="h-[250px] mb-5 w-full object-cover rounded-2xl"
         src={image}
         alt=""
       />

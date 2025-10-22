@@ -8,6 +8,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
+import AllSkills from "../pages/AllSkills";
 
 export const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,11 @@ export const Router = createBrowserRouter(
           return { skillsData, provider };
         }}
         Component={Home}
+      />
+      <Route
+        path="/allskills"
+        loader={() => fetch("/skills.json")}
+        Component={AllSkills}
       />
       <Route path="/login" Component={Login} />
       <Route path="/signup" Component={Signup} />

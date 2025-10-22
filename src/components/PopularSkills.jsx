@@ -1,5 +1,6 @@
 import React from "react";
 import SkillCard from "./SkillCard";
+import { NavLink } from "react-router";
 
 const PopularSkills = ({ skillsData }) => {
   const popularSkills = skillsData
@@ -16,6 +17,14 @@ const PopularSkills = ({ skillsData }) => {
         {popularSkills.map((skill) => (
           <SkillCard key={skill.skillId} skill={skill} />
         ))}
+      </div>
+      <div className=" flex justify-center my-10">
+        <NavLink
+          to="/allskills"
+          className="btn btn-primary px-20 py-6 font-bold text-lg"
+        >
+          View All
+        </NavLink>
       </div>
     </div>
   );

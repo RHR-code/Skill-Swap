@@ -14,8 +14,8 @@ const ProviderCard = ({ data }) => {
         <h2 className="font-bold text-2xl">{providerName}</h2>
         <h2 className="text-base-300 text-sm">{specialty}</h2>
         <div className="flex justify-between ">
-          <p>{avgRating}</p>
-          <p>{coursesOffered}</p>
+          <p>Rating: {avgRating}</p>
+          <p>Courses: {coursesOffered}</p>
         </div>
       </div>
     </div>
