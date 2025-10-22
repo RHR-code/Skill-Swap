@@ -10,6 +10,7 @@ import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import AllSkills from "../pages/AllSkills";
 import SkillsDetails from "../pages/SkillsDetails";
+import PrivateRoute from "./PrivateRoute";
 
 export const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,7 +36,11 @@ export const Router = createBrowserRouter(
       <Route
         path="/skills/:id"
         loader={() => fetch("/skills.json")}
-        Component={SkillsDetails}
+        element={
+          <PrivateRoute>
+            <SkillsDetails />
+          </PrivateRoute>
+        }
       />
       <Route path="/login" Component={Login} />
       <Route path="/signup" Component={Signup} />

@@ -1,11 +1,29 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
+import toast from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const { loginUser, setUser } = use(AuthContext);
+  const { loginUser, setUser, googleLogin } = use(AuthContext);
   const [showPass, setShowPass] = useState(false);
+  const { state } = useLocation();
+
+  const navigate = useNavigate();
+  const handleGoogleSingIn = () => {
+    console.log("button clicked");
+
+    googleLogin()
+      .then((res) => {
+        setUser(res.user);
+        console.log(res);
+        navigate(state ? state : "/");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,11 +33,15 @@ const Login = () => {
     loginUser(email, password)
       .then((res) => {
         setUser(res.user);
+        navigate(state ? state : "/");
+        e.target.reset();
+        toast.success("Successfully LogedIn");
       })
       .catch((err) => {
-        console.log(err.code);
+        toast.error(err.code);
       });
   };
+
   return (
     <div className="flex justify-center pt-5">
       <div className="card bg-accent w-full max-w-2xl shrink-0 shadow-2xl py-20 px-10">
@@ -64,6 +86,13 @@ const Login = () => {
               </div>
               <button className="btn btn-primary mt-4 font-bold text-lg">
                 Login
+              </button>
+              <button
+                type="button"
+                className="btn bg-white text-black border-[#e5e5e5]"
+                onClick={handleGoogleSingIn}
+              >
+                <FcGoogle size={20} /> Login with Google
               </button>
               <p className="text-base-100 text-base">
                 Already have an account?{" "}

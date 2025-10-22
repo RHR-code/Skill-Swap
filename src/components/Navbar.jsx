@@ -1,8 +1,11 @@
-import React from "react";
+import React, { use } from "react";
 import { FaCircleUser } from "react-icons/fa6";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const { user, logoutUser, setUser } = use(AuthContext);
   const links = (
     <>
       <NavLink to="/" className="font-semibold text-base">
@@ -10,6 +13,16 @@ const Navbar = () => {
       </NavLink>
     </>
   );
+  const handleLogout = () => {
+    logoutUser()
+      .then(() => {
+        setUser(null);
+        toast.success("Logout completed");
+      })
+      .catch((err) => {
+        toast.error(err.code);
+      });
+  };
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -44,22 +57,33 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-2">
-        <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            isActive ? "btn btn-primary" : "btn btn-primary btn-outline"
-          }
-        >
-          Login
-        </NavLink>
-        <NavLink
-          to="/signup"
-          className={({ isActive }) =>
-            isActive ? "btn btn-primary" : "btn btn-primary btn-outline"
-          }
-        >
-          Signup
-        </NavLink>
+        {user ? (
+          <button
+            onClick={handleLogout}
+            className={"btn  btn-primary btn-outline"}
+          >
+            Logout
+          </button>
+        ) : (
+          <div className="space-x-2">
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                isActive ? "btn btn-primary" : "btn btn-primary btn-outline"
+              }
+            >
+              Login
+            </NavLink>
+            <NavLink
+              to="/signup"
+              className={({ isActive }) =>
+                isActive ? "btn btn-primary" : "btn btn-primary btn-outline"
+              }
+            >
+              Signup
+            </NavLink>
+          </div>
+        )}
 
         <FaCircleUser size={40} fill="#9b5de0" />
       </div>

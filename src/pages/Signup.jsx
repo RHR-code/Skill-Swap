@@ -1,11 +1,30 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
+import toast from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 
 const Signup = () => {
-  const { signupUser, setUser, updateUser } = use(AuthContext);
+  const { signupUser, setUser, updateUser, googleLogin } = use(AuthContext);
+  const [error, setError] = useState("");
   const [showPass, setShowPass] = useState(false);
+  const navigate = useNavigate();
+  const passRegex = /^(?=.*?[A-Z])(?=.*?[a-z]).{6,}$/;
+
+  const handleGoogleSingIn = () => {
+    console.log("button clicked");
+
+    googleLogin()
+      .then((res) => {
+        setUser(res.user);
+        console.log(res);
+        navigate("/");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+  };
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -14,16 +33,25 @@ const Signup = () => {
     const email = form.email.value;
     const photoURL = form.photoURL.value;
     const password = form.password.value;
-
-    signupUser(email, password)
-      .then((res) => {
-        updateUser({ displayName, photoURL }).then(() => {
-          setUser(res.user);
+    if (!passRegex.test(password)) {
+      setError(
+        "Password must be at least 6 character and should include a uppercase and lowercase letter"
+      );
+    } else {
+      signupUser(email, password)
+        .then((res) => {
+          updateUser({ displayName, photoURL }).then(() => {
+            setUser(res.user);
+            toast.success("Successfully SignedUp");
+            setError("");
+            navigate("/");
+            e.target.reset();
+          });
+        })
+        .catch((err) => {
+          toast.error(err.code);
         });
-      })
-      .catch((err) => {
-        console.log(err.code);
-      });
+    }
   };
   return (
     <div className="flex justify-center pt-5">
@@ -85,12 +113,20 @@ const Signup = () => {
               <button className="btn btn-primary mt-4 font-bold text-lg">
                 Register
               </button>
+              <button
+                type="button"
+                className="btn bg-white text-black border-[#e5e5e5]"
+                onClick={handleGoogleSingIn}
+              >
+                <FcGoogle size={20} /> Login with Google
+              </button>
               <p className="text-base-100 text-base">
                 Already have an account?{" "}
                 <Link to="/login" className="text-secondary underline">
                   Login
                 </Link>
               </p>
+              {error && <p className="text-red-500">{error}</p>}
             </fieldset>
           </form>
         </div>
