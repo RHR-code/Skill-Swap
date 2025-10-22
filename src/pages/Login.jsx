@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
@@ -9,7 +9,7 @@ const Login = () => {
   const { loginUser, setUser, googleLogin } = use(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const { state } = useLocation();
-
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const handleGoogleSingIn = () => {
     console.log("button clicked");
@@ -57,6 +57,8 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="input w-full"
                 placeholder="Enter Your Email"
                 required
@@ -80,9 +82,13 @@ const Login = () => {
                 </div>
               </div>
               <div>
-                <a className="link link-hover text-white underline text-sm font-semibold">
+                <Link
+                  to="/resetpassword"
+                  state={email}
+                  className="link link-hover text-white underline text-sm font-semibold"
+                >
                   Forgot password?
-                </a>
+                </Link>
               </div>
               <button className="btn btn-primary mt-4 font-bold text-lg">
                 Login

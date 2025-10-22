@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logoutUser, setUser } = use(AuthContext);
+
   const links = (
     <>
       <NavLink to="/" className="font-semibold text-base">
@@ -85,7 +86,19 @@ const Navbar = () => {
           </div>
         )}
 
-        <FaCircleUser size={40} fill="#9b5de0" />
+        {user ? (
+          <Link to="/myprofile">
+            <img
+              className="w-10 h-10 rounded-full object-cover"
+              src={user?.photoURL}
+              alt=""
+            />
+          </Link>
+        ) : (
+          <Link to="/login">
+            <FaCircleUser size={40} fill="#9b5de0" />
+          </Link>
+        )}
       </div>
     </div>
   );

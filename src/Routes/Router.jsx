@@ -11,13 +11,16 @@ import Signup from "../pages/Signup";
 import AllSkills from "../pages/AllSkills";
 import SkillsDetails from "../pages/SkillsDetails";
 import PrivateRoute from "./PrivateRoute";
+import MyProfile from "../pages/MyProfile";
+import Loader from "../components/loader";
+import ResetPassword from "../pages/ResetPassword";
 
 export const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" Component={MainLayout}>
       <Route
         index={true}
-        // loader={() => fetch("/skills.json")}
+        hydrateFallbackElement={<Loader />}
         loader={async () => {
           const [skillsData, provider] = await Promise.all([
             fetch("/skills.json").then((res) => res.json()),
@@ -30,11 +33,13 @@ export const Router = createBrowserRouter(
       />
       <Route
         path="/allskills"
+        hydrateFallbackElement={<Loader />}
         loader={() => fetch("/skills.json")}
         Component={AllSkills}
       />
       <Route
         path="/skills/:id"
+        hydrateFallbackElement={<Loader />}
         loader={() => fetch("/skills.json")}
         element={
           <PrivateRoute>
@@ -42,7 +47,16 @@ export const Router = createBrowserRouter(
           </PrivateRoute>
         }
       />
+      <Route
+        path="/myprofile"
+        element={
+          <PrivateRoute>
+            <MyProfile />
+          </PrivateRoute>
+        }
+      />
       <Route path="/login" Component={Login} />
+      <Route path="/resetpassword" Component={ResetPassword} />
       <Route path="/signup" Component={Signup} />
       <Route path="/*" element={<div>Error 404 Page</div>} />
     </Route>
