@@ -70,5 +70,77 @@
     "description": "Techniques to overcome stage fright and deliver engaging, persuasive presentations.",
     "image": "https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870",
     "category": "Personal Development"
+  },
+  {
+    "skillId": 7,
+    "skillName": "Basic Photography: DSLR Essentials",
+    "providerName": "Chloe Adams",
+    "providerEmail": "chloe.a@shutterbug.com",
+    "price": 35,
+    "rating": 4.5,
+    "slotsAvailable": 7,
+    "description": "Understanding aperture, shutter speed, and ISO to take control of your DSLR camera.",
+    "image": "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870",
+    "category": "Photography"
+  },
+  {
+    "skillId": 8,
+    "skillName": "Excel for Data Analysis",
+    "providerName": "Raj Patel",
+    "providerEmail": "raj.p@datapro.net",
+    "price": 50,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Learn formulas, pivot tables, and charting to analyze and visualize business data.",
+    "image": "https://plus.unsplash.com/premium_photo-1726848121953-354d20f7f522?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=802",
+    "category": "Business"
+  },
+  {
+    "skillId": 9,
+    "skillName": "Yoga for Stress Relief",
+    "providerName": "Maya Santos",
+    "providerEmail": "maya.s@zenlife.com",
+    "price": 15,
+    "rating": 4.9,
+    "slotsAvailable": 10,
+    "description": "Gentle Vinyasa flow focusing on breathwork and postures to reduce anxiety.",
+    "image": "https://images.unsplash.com/photo-1524863479829-916d8e77f114?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870",
+    "category": "Health & Fitness"
+  },
+  {
+    "skillId": 10,
+    "skillName": "Web Development with React JS",
+    "providerName": "Kenji Tanaka",
+    "providerEmail": "kenji.t@devmaster.jp",
+    "price": 120,
+    "rating": 4.6,
+    "slotsAvailable": 3,
+    "description": "Build modern, single-page applications using the popular React JavaScript library.",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870",
+    "category": "Coding"
+  },
+  {
+    "skillId": 11,
+    "skillName": "Italian Language Level A2",
+    "providerName": "Sofia Rossi",
+    "providerEmail": "sofia.r@ciaoitalia.it",
+    "price": 35,
+    "rating": 4.8,
+    "slotsAvailable": 5,
+    "description": "Continue your Italian journey with more complex grammar and expanded conversational skills.",
+    "image": "https://plus.unsplash.com/premium_photo-1675367607037-a3b41ba71001?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8SXRhbGlhbiUyMGxhbmd1YWdlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500",
+    "category": "Languages"
+  },
+  {
+    "skillId": 12,
+    "skillName": "Financial Planning for Beginners",
+    "providerName": "George Chen",
+    "providerEmail": "george.c@moneywise.com",
+    "price": 65,
+    "rating": 4.4,
+    "slotsAvailable": 6,
+    "description": "Learn budgeting, saving, and investing fundamentals to secure your financial future.",
+    "image": "https://plus.unsplash.com/premium_photo-1680721444743-2a94a309a24a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870",
+    "category": "Finance"
   }
 ]

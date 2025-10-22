@@ -1,6 +1,7 @@
 import React from "react";
 import HeroSlider from "../components/HeroSlider";
 import { useLoaderData } from "react-router";
+import PopularSkills from "../components/PopularSkills";
 
 const Home = () => {
   const skillsData = useLoaderData();
@@ -8,9 +9,12 @@ const Home = () => {
 
   return (
     <div>
-      <div className="py-5 bg-base-300">
+      <section className="py-5 bg-base-300">
         <HeroSlider skillsData={skillsData} />
-      </div>
+      </section>
+      <section className="mt-20">
+        <PopularSkills skillsData={skillsData} />
+      </section>
     </div>
   );
 };
