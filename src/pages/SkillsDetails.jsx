@@ -21,7 +21,7 @@ const SkillsDetails = () => {
 
   return (
     <div className="py-10">
-      <div className="flex gap-10 bg-base-300 backdrop-blur-lg p-10 rounded-2xl ">
+      <div className="flex gap-10 bg-base-300 backdrop-blur-lg p-10 pb-40 rounded-2xl ">
         <div>
           <img className="rounded-2xl" src={image} alt="" />
         </div>
@@ -50,7 +50,7 @@ const SkillsDetails = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-center py-10">
+      <div className="w-full flex justify-center -mt-30">
         <BookSession />
       </div>
     </div>

@@ -7,7 +7,6 @@ import HowItWorks from "../components/HowItWorks";
 
 const Home = () => {
   const { skillsData, provider } = useLoaderData();
-  console.log(skillsData);
 
   return (
     <div>

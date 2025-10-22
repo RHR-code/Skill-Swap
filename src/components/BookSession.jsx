@@ -7,7 +7,7 @@ const BookSession = () => {
     toast.success("Session Booked Successfully");
   };
   return (
-    <div className="card bg-accent w-full max-w-2xl shrink-0 shadow-2xl">
+    <div className="card bg-accent/50 backdrop-blur-sm  w-full max-w-2xl shrink-0 shadow-2xl p-10 ">
       <div className="card-body">
         <form onSubmit={handleBook}>
           <fieldset className="fieldset">
