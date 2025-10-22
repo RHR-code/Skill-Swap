@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCircleUser } from "react-icons/fa6";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
   const links = (
@@ -44,8 +44,23 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-2">
-        <a className="btn btn-primary btn-outline">Login</a>
-        <a className="btn btn-outline btn-primary ">Signup</a>
+        <NavLink
+          to="/login"
+          className={({ isActive }) =>
+            isActive ? "btn btn-primary" : "btn btn-primary btn-outline"
+          }
+        >
+          Login
+        </NavLink>
+        <NavLink
+          to="/signup"
+          className={({ isActive }) =>
+            isActive ? "btn btn-primary" : "btn btn-primary btn-outline"
+          }
+        >
+          Signup
+        </NavLink>
+
         <FaCircleUser size={40} fill="#9b5de0" />
       </div>
     </div>
