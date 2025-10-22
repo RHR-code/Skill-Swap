@@ -2,9 +2,10 @@ import React from "react";
 import HeroSlider from "../components/HeroSlider";
 import { useLoaderData } from "react-router";
 import PopularSkills from "../components/PopularSkills";
+import TopProvider from "../components/TopProvider";
 
 const Home = () => {
-  const skillsData = useLoaderData();
+  const { skillsData, provider } = useLoaderData();
   console.log(skillsData);
 
   return (
@@ -14,6 +15,9 @@ const Home = () => {
       </section>
       <section className="mt-20">
         <PopularSkills skillsData={skillsData} />
+      </section>
+      <section>
+        <TopProvider provider={provider} />
       </section>
     </div>
   );

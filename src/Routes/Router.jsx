@@ -14,7 +14,15 @@ export const Router = createBrowserRouter(
     <Route path="/" Component={MainLayout}>
       <Route
         index={true}
-        loader={() => fetch("/skills.json")}
+        // loader={() => fetch("/skills.json")}
+        loader={async () => {
+          const [skillsData, provider] = await Promise.all([
+            fetch("/skills.json").then((res) => res.json()),
+            fetch("/topSeller.json").then((res) => res.json()),
+          ]);
+
+          return { skillsData, provider };
+        }}
         Component={Home}
       />
       <Route path="/login" Component={Login} />

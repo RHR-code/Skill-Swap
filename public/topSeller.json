@@ -1,0 +1,34 @@
+[
+  {
+    "providerId": 101,
+    "providerName": "Maya Santos",
+    "specialty": "Programming & Data Science",
+    "avgRating": 4.9,
+    "coursesOffered": 12,
+    "profileImage": "https://images.pexels.com/photos/32072041/pexels-photo-32072041.jpeg"
+  },
+  {
+    "providerId": 102,
+    "providerName": "Mark Webber",
+    "specialty": "Digital Marketing & SEO",
+    "avgRating": 4.8,
+    "coursesOffered": 8,
+    "profileImage": "https://images.pexels.com/photos/7956488/pexels-photo-7956488.jpeg"
+  },
+  {
+    "providerId": 103,
+    "providerName": "Éloïse Dubois",
+    "specialty": "French Language & Culture",
+    "avgRating": 4.9,
+    "coursesOffered": 6,
+    "profileImage": "https://images.pexels.com/photos/11276496/pexels-photo-11276496.jpeg"
+  },
+  {
+    "providerId": 104,
+    "providerName": "Lisa Chen",
+    "specialty": "Visual Arts & Design",
+    "avgRating": 5.0,
+    "coursesOffered": 9,
+    "profileImage": "https://images.pexels.com/photos/7762464/pexels-photo-7762464.jpeg"
+  }
+]
