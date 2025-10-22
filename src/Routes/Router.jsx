@@ -9,6 +9,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import AllSkills from "../pages/AllSkills";
+import SkillsDetails from "../pages/SkillsDetails";
 
 export const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,11 @@ export const Router = createBrowserRouter(
         path="/allskills"
         loader={() => fetch("/skills.json")}
         Component={AllSkills}
+      />
+      <Route
+        path="/skills/:id"
+        loader={() => fetch("/skills.json")}
+        Component={SkillsDetails}
       />
       <Route path="/login" Component={Login} />
       <Route path="/signup" Component={Signup} />

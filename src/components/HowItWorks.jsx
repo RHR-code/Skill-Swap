@@ -6,23 +6,26 @@ import supportImg from "../assets/24-hours-support.png";
 const HowItWorks = () => {
   const guideArr = [
     {
+      id: 1,
       img: laptopImg,
       title: "Sign Up for free in 2 minutes",
       description: "Provides some basic information like your name and email",
     },
     {
+      id: 2,
       img: phoneImg,
       title: "Get personalized deals",
       description:
         "You can find all sort of courses . You can choose what to learn",
     },
     {
+      id: 3,
       img: businessImg,
       title: "Look for best teacher",
-      description:
-        "We have experienced teacher who are well trained you can always look for better one for your learning",
+      description: "We have experienced teacher's who are well trained",
     },
     {
+      id: 4,
       img: supportImg,
       title: "Speak to our course advisor",
       description:
@@ -38,7 +41,10 @@ const HowItWorks = () => {
       <div>
         <div className="grid grid-cols-4 gap-10 w-11/12 mx-auto -mt-40">
           {guideArr.map((guide) => (
-            <div className="bg-base-300/30 shadow-2xl backdrop-blur-sm p-10 rounded-2xl flex flex-col items-center gap-5">
+            <div
+              key={guide.id}
+              className="bg-base-300/30 shadow-2xl backdrop-blur-sm p-10 rounded-2xl flex flex-col items-center gap-5"
+            >
               <img className="w-[100px]" src={guide.img} alt="" />
               <h2 className="font-bold text-lg text-center">{guide.title}</h2>
               <p className="text-sm font-semibold text-center">

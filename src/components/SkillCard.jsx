@@ -1,7 +1,8 @@
 import React from "react";
+import { NavLink } from "react-router";
 
 const SkillCard = ({ skill }) => {
-  const { skillName, image, price, rating } = skill;
+  const { skillName, image, price, rating, skillId } = skill;
   return (
     <div className="bg-base-300 rounded-2xl flex flex-col justify-between ">
       <img
@@ -15,7 +16,9 @@ const SkillCard = ({ skill }) => {
           <p> Price: ${price}</p>
           <p> Rating: {rating}</p>
         </div>
-        <button className="btn btn-primary">View Details</button>
+        <NavLink to={`/skills/${skillId}`} className="btn btn-primary">
+          View Details
+        </NavLink>
       </div>
     </div>
   );
