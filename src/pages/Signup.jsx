@@ -1,9 +1,12 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../context/AuthContext";
+import { FaEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Signup = () => {
   const { signupUser, setUser, updateUser } = use(AuthContext);
+  const [showPass, setShowPass] = useState(false);
+
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -64,14 +67,21 @@ const Signup = () => {
               <label className="label text-base-100  text-xl font-semibold ">
                 Password
               </label>
-              <input
-                type="Password"
-                name="password"
-                className="input w-full "
-                placeholder="Enter Your Password"
-                required
-              />
-
+              <div className="relative">
+                <input
+                  type={showPass ? "text" : "password"}
+                  name="password"
+                  className="input w-full "
+                  placeholder="Enter Your Password"
+                  required
+                />
+                <div
+                  onClick={() => setShowPass(!showPass)}
+                  className="absolute right-3 top-2.5 z-10"
+                >
+                  {showPass ? <FaRegEyeSlash size={20} /> : <FaEye size={20} />}
+                </div>
+              </div>
               <button className="btn btn-primary mt-4 font-bold text-lg">
                 Register
               </button>

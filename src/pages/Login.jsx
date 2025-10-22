@@ -1,12 +1,24 @@
-import React from "react";
+import React, { use, useState } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../context/AuthContext";
+import { FaEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Login = () => {
+  const { loginUser, setUser } = use(AuthContext);
+  const [showPass, setShowPass] = useState(false);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    loginUser(email, password)
+      .then((res) => {
+        setUser(res.user);
+      })
+      .catch((err) => {
+        console.log(err.code);
+      });
   };
   return (
     <div className="flex justify-center pt-5">
@@ -30,13 +42,21 @@ const Login = () => {
               <label className="label text-base-100  text-xl font-semibold ">
                 Password
               </label>
-              <input
-                type="Password"
-                name="password"
-                className="input w-full "
-                placeholder="Enter Your Password"
-                required
-              />
+              <div className="relative">
+                <input
+                  type={showPass ? "text" : "password"}
+                  name="password"
+                  className="input w-full "
+                  placeholder="Enter Your Password"
+                  required
+                />
+                <div
+                  onClick={() => setShowPass(!showPass)}
+                  className="absolute right-3 top-2.5 z-10"
+                >
+                  {showPass ? <FaRegEyeSlash size={20} /> : <FaEye size={20} />}
+                </div>
+              </div>
               <div>
                 <a className="link link-hover text-white underline text-sm font-semibold">
                   Forgot password?
