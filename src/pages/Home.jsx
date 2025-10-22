@@ -1,13 +1,13 @@
-import React from "react";
+import React, { use } from "react";
 import HeroSlider from "../components/HeroSlider";
 import { useLoaderData } from "react-router";
 import PopularSkills from "../components/PopularSkills";
 import TopProvider from "../components/TopProvider";
 import HowItWorks from "../components/HowItWorks";
+import { AuthContext } from "../context/AuthContext";
 
 const Home = () => {
   const { skillsData, provider } = useLoaderData();
-
   return (
     <div>
       <section className="py-5 bg-base-300">

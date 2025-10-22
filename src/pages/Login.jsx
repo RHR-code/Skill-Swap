@@ -2,7 +2,12 @@ import React from "react";
 import { Link } from "react-router";
 
 const Login = () => {
-  const handleLogin = () => {};
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+  };
   return (
     <div className="flex justify-center pt-5">
       <div className="card bg-accent w-full max-w-2xl shrink-0 shadow-2xl py-20 px-10">
@@ -17,6 +22,7 @@ const Login = () => {
               </label>
               <input
                 type="email"
+                name="email"
                 className="input w-full"
                 placeholder="Enter Your Email"
                 required
@@ -26,6 +32,7 @@ const Login = () => {
               </label>
               <input
                 type="Password"
+                name="password"
                 className="input w-full "
                 placeholder="Enter Your Password"
                 required

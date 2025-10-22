@@ -1,8 +1,27 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../context/AuthContext";
 
 const Signup = () => {
-  const handleSignUp = () => {};
+  const { signupUser, setUser, updateUser } = use(AuthContext);
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const displayName = form.name.value;
+    const email = form.email.value;
+    const photoURL = form.photoURL.value;
+    const password = form.password.value;
+
+    signupUser(email, password)
+      .then((res) => {
+        updateUser({ displayName, photoURL }).then(() => {
+          setUser(res.user);
+        });
+      })
+      .catch((err) => {
+        console.log(err.code);
+      });
+  };
   return (
     <div className="flex justify-center pt-5">
       <div className="card bg-accent w-full max-w-2xl shrink-0 shadow-2xl py-20 px-10">
@@ -17,6 +36,7 @@ const Signup = () => {
               </label>
               <input
                 type="text"
+                name="name"
                 className="input w-full"
                 placeholder="Enter Your Name"
                 required
@@ -26,6 +46,7 @@ const Signup = () => {
               </label>
               <input
                 type="email"
+                name="email"
                 className="input w-full"
                 placeholder="Enter Your Email"
                 required
@@ -35,6 +56,7 @@ const Signup = () => {
               </label>
               <input
                 type="text"
+                name="photoURL"
                 className="input w-full"
                 placeholder="Enter Your PhotoURL"
                 required
@@ -44,6 +66,7 @@ const Signup = () => {
               </label>
               <input
                 type="Password"
+                name="password"
                 className="input w-full "
                 placeholder="Enter Your Password"
                 required
