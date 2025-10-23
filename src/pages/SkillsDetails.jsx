@@ -22,7 +22,7 @@ const SkillsDetails = () => {
   return (
     <div className="py-10">
       <div className="flex flex-col lg:flex-row  gap-10 bg-base-300 backdrop-blur-lg p-5 pb-40  rounded-2xl ">
-        <div>
+        <div className="flex justify-center">
           <img className="rounded-2xl" src={image} alt="" />
         </div>
         <div className="flex flex-col  justify-center gap-5">
