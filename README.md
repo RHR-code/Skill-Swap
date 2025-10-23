@@ -1,3 +1,30 @@
+# SkillSwap
+
+- SkillSwap is a learning platform . Where you will find all kind of learning resources . We have a lot of experienced teacher not only that we have support moderators who are 24 hours active to support your if you have any course related problems.
+
+### Key Features
+
+- 500+ Hour of hands on learning in our courses
+- 1500+ Students Passed Our Competitions and Got a Job
+- 25/75 The Ration of theory and Practice in Each Courses
+- 40+ We Teach people from 4 continents and over 40 countries
+
+### NPM Packages Used in this Website
+
+"@tailwindcss/vite": "^4.1.15",
+
+- aos
+- daisyui
+- firebase
+- react
+- react-dom
+- react-hot-toast
+- react-icons
+- react-router
+- react-spinners
+- swiper
+- tailwindcss
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
