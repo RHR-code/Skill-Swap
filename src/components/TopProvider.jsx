@@ -7,7 +7,7 @@ const TopProvider = ({ provider }) => {
       <h1 className="text-3xl font-bold text-accent text-center py-10">
         Our Top Rated Providers
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4  gap-10 ">
         {provider.map((data) => (
           <ProviderCard key={data.providerId} data={data} />
         ))}

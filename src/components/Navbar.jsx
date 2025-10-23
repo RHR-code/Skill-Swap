@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { FaCircleUser } from "react-icons/fa6";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../context/AuthContext";
@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logoutUser, setUser } = use(AuthContext);
-
+  const [isHover, setIsHover] = useState(false);
   const links = (
     <>
       <NavLink to="/" className="font-semibold text-base">
@@ -25,10 +25,10 @@ const Navbar = () => {
       });
   };
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm mt-5">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="pr-2 lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -52,7 +52,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="font-bold text-2xl text-accent">SkillSwap</a>
+        <a className="font-bold text-xl md:text-2xl text-accent">SkillSwap</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -66,7 +66,7 @@ const Navbar = () => {
             Logout
           </button>
         ) : (
-          <div className="space-x-2">
+          <div className="space-x-2 flex">
             <NavLink
               to="/login"
               className={({ isActive }) =>
@@ -87,17 +87,24 @@ const Navbar = () => {
         )}
 
         {user ? (
-          <Link to="/myprofile">
+          <NavLink to="/myprofile" className="relative ">
             <img
-              className="w-10 h-10 rounded-full object-cover"
+              className="w-10 h-10 rounded-full object-cover "
               src={user?.photoURL}
+              onMouseOver={() => setIsHover(true)}
+              onMouseOut={() => setIsHover(false)}
               alt=""
             />
-          </Link>
+            {isHover && (
+              <p className="absolute bg-secondary/50 backdrop-blur-2xl w-[200px] right-0 rounded-full  text-center -top-7">
+                {user.displayName}
+              </p>
+            )}
+          </NavLink>
         ) : (
-          <Link to="/login">
+          <NavLink to="/myprofile" className="hidden md:flex">
             <FaCircleUser size={40} fill="#9b5de0" />
-          </Link>
+          </NavLink>
         )}
       </div>
     </div>

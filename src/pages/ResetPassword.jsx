@@ -1,13 +1,23 @@
-import React from "react";
-import { useLocation } from "react-router";
+import React, { use } from "react";
+import { Link, useLocation } from "react-router";
+import { AuthContext } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const ResetPassword = () => {
   const { state } = useLocation();
-  console.log(state);
+  const { resetPassUser } = use(AuthContext);
 
   const handleResetPass = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
+    resetPassUser(email)
+      .then(() => {
+        toast.success("Please Check Your Email");
+        window.location.href = "https://mail.google.com/mail";
+      })
+      .catch((err) => {
+        toast.error(err.code);
+      });
   };
   return (
     <div className="flex justify-center pt-5">

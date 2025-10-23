@@ -7,11 +7,28 @@ const UpdateProfileModal = () => {
   const [photoURL, setPhotoURL] = useState("");
   const { updateUser, setUser, user } = use(AuthContext);
   const handleUpdateProfile = () => {
-    if (displayName || photoURL) {
-      updateUser({ displayName, photoURL }).then((res) => {
+    if (displayName && photoURL) {
+      updateUser({ displayName, photoURL }).then(() => {
         setUser({ ...user, displayName, photoURL });
-        toast.success("Successfully SignedUp");
+        toast.success("Profile Name and Photo Updated");
+        setPhotoURL("");
       });
+    } else if (displayName || photoURL) {
+      if (displayName) {
+        updateUser({ displayName }).then(() => {
+          setUser({ ...user, displayName });
+          toast.success("Profile Name Updated");
+          setDisplayName("");
+        });
+      } else if (photoURL) {
+        updateUser({ photoURL }).then(() => {
+          setUser({ ...user, photoURL });
+          toast.success("Profile Photo Updated");
+          setPhotoURL("");
+        });
+      }
+    } else {
+      toast.error("Please Enter Data To Update");
     }
   };
   return (
@@ -45,10 +62,14 @@ const UpdateProfileModal = () => {
             required
           />
           <div className="flex mt-5 items-center justify-between">
-            <button onClick={handleUpdateProfile} className="btn btn-primary">
-              Update
-            </button>
-
+            <form method="dialog">
+              <button
+                onClick={handleUpdateProfile}
+                className=" btn btn-primary"
+              >
+                Update
+              </button>
+            </form>
             <div className="">
               <form method="dialog">
                 {/* if there is a button in form, it will close the modal */}

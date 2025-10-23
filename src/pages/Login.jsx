@@ -1,4 +1,4 @@
-import React, { use, useRef, useState } from "react";
+import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
@@ -9,6 +9,7 @@ const Login = () => {
   const { loginUser, setUser, googleLogin } = use(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const { state } = useLocation();
+  console.log("state", state);
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const handleGoogleSingIn = () => {
@@ -44,7 +45,7 @@ const Login = () => {
 
   return (
     <div className="flex justify-center pt-5">
-      <div className="card bg-accent w-full max-w-2xl shrink-0 shadow-2xl py-20 px-10">
+      <div className="card bg-accent w-full max-w-2xl shrink-0 shadow-2xl py-10 md:py-20 md:px-10">
         <div className="card-body">
           <h1 className="text-white font-bold text-4xl text-center">
             User Login

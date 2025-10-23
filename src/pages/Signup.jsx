@@ -55,7 +55,7 @@ const Signup = () => {
   };
   return (
     <div className="flex justify-center pt-5">
-      <div className="card bg-accent w-full max-w-2xl shrink-0 shadow-2xl py-20 px-10">
+      <div className="card bg-accent w-full max-w-2xl shrink-0 shadow-2xl py-10 md:py-20 md:px-10">
         <div className="card-body">
           <h1 className="text-white font-bold text-4xl text-center">
             User SignUp

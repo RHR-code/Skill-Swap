@@ -5,6 +5,7 @@ import PopularSkills from "../components/PopularSkills";
 import TopProvider from "../components/TopProvider";
 import HowItWorks from "../components/HowItWorks";
 import { AuthContext } from "../context/AuthContext";
+import OurAbility from "../components/OurAbility";
 
 const Home = () => {
   const { skillsData, provider } = useLoaderData();
@@ -21,6 +22,9 @@ const Home = () => {
       </section>
       <section>
         <HowItWorks />
+      </section>
+      <section className="mt-20">
+        <OurAbility />
       </section>
     </div>
   );

@@ -9,9 +9,9 @@ const MyProfile = () => {
 
   return (
     <div className="flex justify-center mt-10 py-10 bg-base-300">
-      <div className="bg-accent py-20 px-30 text-base-100 flex rounded-2xl flex-col items-center gap-5">
+      <div className="bg-accent p-10  md:py-20 md:px-30 text-base-100 flex rounded-2xl flex-col items-center gap-5">
         <img
-          className="h-[200px] w-[200px] object-cover rounded-full"
+          className="h-[150px] w-[150px] md:h-[200px] md:w-[200px] object-cover rounded-full"
           src={photoURL}
           alt=""
         />

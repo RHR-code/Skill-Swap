@@ -34,12 +34,12 @@ const HowItWorks = () => {
   ];
   return (
     <div>
-      <div className="bg-accent text-white pt-20 pb-60">
+      <div className="bg-accent text-white pt-20 pb-10 px-10 md:px-0 mb-5  md:pb-60">
         <h1 className="text-3xl font-bold text-center py-5">How It Works</h1>
         <p className="text-center ">Learn from our best to grow your career </p>
       </div>
       <div>
-        <div className="grid grid-cols-4 gap-10 w-11/12 mx-auto -mt-40">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 w-11/12 mx-auto md:-mt-40">
           {guideArr.map((guide) => (
             <div
               key={guide.id}
