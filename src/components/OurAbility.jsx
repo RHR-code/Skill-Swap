@@ -2,7 +2,7 @@ import React from "react";
 
 const OurAbility = () => {
   return (
-    <div className="bg-base-300">
+    <div className="bg-base-300" data-aos="fade-up">
       <h1 className="text-3xl font-bold text-accent text-center pt-20">
         Our Abilities
       </h1>

@@ -9,7 +9,7 @@ const PopularSkills = ({ skillsData }) => {
   console.log("popularSkills", popularSkills);
 
   return (
-    <div>
+    <div data-aos="fade-up">
       <h1 className="text-3xl font-bold text-accent text-center py-10">
         Our Popular Skills
       </h1>

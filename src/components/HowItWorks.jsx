@@ -33,7 +33,7 @@ const HowItWorks = () => {
     },
   ];
   return (
-    <div>
+    <div data-aos="fade-up">
       <div className="bg-accent text-white pt-20 pb-10 px-10 md:px-0 mb-5  md:pb-60">
         <h1 className="text-3xl font-bold text-center py-5">How It Works</h1>
         <p className="text-center ">Learn from our best to grow your career </p>
