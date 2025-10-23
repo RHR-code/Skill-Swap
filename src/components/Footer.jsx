@@ -9,11 +9,9 @@ const Footer = () => {
       </a>
       <div className="footer sm:footer-horizontal  text-base-content">
         <nav>
-          <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <h6 className="footer-title">Contact Info</h6>
+          <a className="link link-hover">skillswap@gmail.com</a>
+          <a className="link link-hover">+08801234567891</a>
         </nav>
         <nav>
           <h6 className="footer-title">Company</h6>

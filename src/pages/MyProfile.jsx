@@ -1,11 +1,13 @@
 import React, { use } from "react";
 import { AuthContext } from "../context/AuthContext";
 import UpdateProfileModal from "../components/UpdateProfileModal";
+import Loader from "../components/loader";
 
 const MyProfile = () => {
-  const { user } = use(AuthContext);
-  if (!user) return;
+  const { user, loader } = use(AuthContext);
+  if (loader) <Loader />;
   const { displayName, email, photoURL } = user;
+  console.log(user);
 
   return (
     <div className="flex justify-center mt-10 py-10 bg-base-300">

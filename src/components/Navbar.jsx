@@ -3,6 +3,8 @@ import { FaCircleUser } from "react-icons/fa6";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import toast from "react-hot-toast";
+import { LuLogIn, LuLogOut } from "react-icons/lu";
+import { IoCreateSharp } from "react-icons/io5";
 
 const Navbar = () => {
   const { user, logoutUser, setUser } = use(AuthContext);
@@ -63,17 +65,17 @@ const Navbar = () => {
             onClick={handleLogout}
             className={"btn  btn-primary btn-outline"}
           >
-            Logout
+            <LuLogOut className="hidden sm:flex" /> Logout
           </button>
         ) : (
-          <div className="space-x-2 flex">
+          <div className="space-x-2 flex ">
             <NavLink
               to="/login"
               className={({ isActive }) =>
-                isActive ? "btn btn-primary" : "btn btn-primary btn-outline"
+                isActive ? " btn btn-primary" : "btn btn-primary btn-outline"
               }
             >
-              Login
+              <LuLogIn className="hidden sm:flex" /> Login
             </NavLink>
             <NavLink
               to="/signup"
@@ -81,7 +83,7 @@ const Navbar = () => {
                 isActive ? "btn btn-primary" : "btn btn-primary btn-outline"
               }
             >
-              Signup
+              <IoCreateSharp className="hidden sm:flex" /> Signup
             </NavLink>
           </div>
         )}

@@ -8,7 +8,10 @@ const BookSession = () => {
     e.target.reset();
   };
   return (
-    <div className="card bg-accent/50 backdrop-blur-sm  w-full max-w-2xl shrink-0 shadow-2xl p-10 ">
+    <div
+      data-aos="fade-up"
+      className="card bg-accent/50 backdrop-blur-sm  w-full max-w-2xl shrink-0 shadow-2xl md:p-10  "
+    >
       <div className="card-body">
         <form onSubmit={handleBook}>
           <fieldset className="fieldset">

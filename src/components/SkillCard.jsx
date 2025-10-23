@@ -1,4 +1,5 @@
 import React from "react";
+import { TbListDetails } from "react-icons/tb";
 import { NavLink } from "react-router";
 
 const SkillCard = ({ skill }) => {
@@ -17,7 +18,7 @@ const SkillCard = ({ skill }) => {
           <p> Rating: {rating}</p>
         </div>
         <NavLink to={`/skills/${skillId}`} className="btn btn-primary">
-          View Details
+          <TbListDetails /> View Details
         </NavLink>
       </div>
     </div>

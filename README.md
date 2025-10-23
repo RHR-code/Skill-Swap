@@ -2,6 +2,8 @@
 
 - SkillSwap is a learning platform . Where you will find all kind of learning resources . We have a lot of experienced teacher not only that we have support moderators who are 24 hours active to support your if you have any course related problems.
 
+## [Live Website Link](https://a9-category-sunflower-64414.web.app/)
+
 ### Key Features
 
 - 500+ Hour of hands on learning in our courses
@@ -11,8 +13,7 @@
 
 ### NPM Packages Used in this Website
 
-"@tailwindcss/vite": "^4.1.15",
-
+- tailwindcss/vite
 - aos
 - daisyui
 - firebase

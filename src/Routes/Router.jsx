@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyProfile from "../pages/MyProfile";
 import Loader from "../components/loader";
 import ResetPassword from "../pages/ResetPassword";
+import PageNotFound from "../pages/PageNotFound";
 
 export const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -58,7 +59,7 @@ export const Router = createBrowserRouter(
       <Route path="/login" Component={Login} />
       <Route path="/resetpassword" Component={ResetPassword} />
       <Route path="/signup" Component={Signup} />
-      <Route path="/*" element={<div>Error 404 Page</div>} />
+      <Route path="/*" element={<PageNotFound />} />
     </Route>
   )
 );

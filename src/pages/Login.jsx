@@ -13,8 +13,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const handleGoogleSingIn = () => {
-    console.log("button clicked");
-
     googleLogin()
       .then((res) => {
         setUser(res.user);
@@ -102,7 +100,7 @@ const Login = () => {
                 <FcGoogle size={20} /> Login with Google
               </button>
               <p className="text-base-100 text-base">
-                Already have an account?{" "}
+                Don't have an account?{" "}
                 <Link to="/signup" className="text-secondary underline">
                   Register
                 </Link>

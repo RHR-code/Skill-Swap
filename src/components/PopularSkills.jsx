@@ -1,6 +1,7 @@
 import React from "react";
 import SkillCard from "./SkillCard";
 import { NavLink } from "react-router";
+import { TfiViewList } from "react-icons/tfi";
 
 const PopularSkills = ({ skillsData }) => {
   const popularSkills = skillsData
@@ -18,12 +19,12 @@ const PopularSkills = ({ skillsData }) => {
           <SkillCard key={skill.skillId} skill={skill} />
         ))}
       </div>
-      <div className=" flex justify-center my-10">
+      <div className=" flex justify-center my-10 hover:scale-105 duration-100 ease-in-out">
         <NavLink
           to="/allskills"
           className="btn btn-primary px-20 py-6 font-bold text-lg"
         >
-          View All
+          <TfiViewList /> View All
         </NavLink>
       </div>
     </div>

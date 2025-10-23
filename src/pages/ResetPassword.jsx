@@ -41,7 +41,7 @@ const ResetPassword = () => {
               />
 
               <button className="btn btn-primary mt-4 font-bold text-lg">
-                Login
+                Reset Password
               </button>
             </fieldset>
           </form>
