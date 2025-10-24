@@ -6,7 +6,8 @@ import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 
 const Signup = () => {
-  const { signupUser, setUser, updateUser, googleLogin } = use(AuthContext);
+  const { user, signupUser, setUser, updateUser, googleLogin } =
+    use(AuthContext);
   const [error, setError] = useState("");
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
@@ -38,8 +39,9 @@ const Signup = () => {
     } else {
       signupUser(email, password)
         .then((res) => {
+          setUser(res.user);
           updateUser({ displayName, photoURL }).then(() => {
-            setUser(res.user);
+            setUser({ ...user, displayName, photoURL });
             toast.success("Successfully SignedUp");
             setError("");
             navigate("/");

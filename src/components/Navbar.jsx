@@ -89,20 +89,22 @@ const Navbar = () => {
         )}
 
         {user ? (
-          <NavLink to="/myprofile" className="relative ">
-            <img
-              className="w-10 h-10 rounded-full object-cover "
-              src={user?.photoURL}
-              onMouseOver={() => setIsHover(true)}
-              onMouseOut={() => setIsHover(false)}
-              alt=""
-            />
+          <div className="relative">
+            <NavLink to="/myprofile">
+              <img
+                className="w-10 h-10 rounded-full object-cover z-10"
+                src={user.photoURL}
+                onMouseOver={() => setIsHover(true)}
+                onMouseOut={() => setIsHover(false)}
+                alt=""
+              />
+            </NavLink>
             {isHover && (
               <p className="absolute bg-secondary/50 backdrop-blur-2xl w-[200px] right-0 rounded-full  text-center -top-7">
                 {user.displayName}
               </p>
             )}
-          </NavLink>
+          </div>
         ) : (
           <NavLink to="/myprofile" className="hidden md:flex">
             <FaCircleUser size={40} fill="#9b5de0" />
