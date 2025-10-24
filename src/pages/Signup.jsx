@@ -16,8 +16,8 @@ const Signup = () => {
     googleLogin()
       .then((res) => {
         setUser(res.user);
-        navigate("/");
         toast.success("Successfully LogedIn");
+        navigate("/");
       })
       .catch((err) => {
         toast.error(err.message);

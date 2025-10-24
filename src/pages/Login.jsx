@@ -16,8 +16,8 @@ const Login = () => {
     googleLogin()
       .then((res) => {
         setUser(res.user);
-        navigate(state ? state : "/");
         toast.success("Successfully LogedIn");
+        navigate(state ? state : "/");
       })
       .catch((err) => {
         toast.error(err.message);
