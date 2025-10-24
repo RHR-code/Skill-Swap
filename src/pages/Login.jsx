@@ -9,15 +9,15 @@ const Login = () => {
   const { loginUser, setUser, googleLogin } = use(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const { state } = useLocation();
-  console.log("state", state);
+
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const handleGoogleSingIn = () => {
     googleLogin()
       .then((res) => {
         setUser(res.user);
-        console.log(res);
         navigate(state ? state : "/");
+        toast.success("Successfully LogedIn");
       })
       .catch((err) => {
         toast.error(err.message);

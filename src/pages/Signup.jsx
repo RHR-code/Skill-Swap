@@ -13,13 +13,11 @@ const Signup = () => {
   const passRegex = /^(?=.*?[A-Z])(?=.*?[a-z]).{6,}$/;
 
   const handleGoogleSingIn = () => {
-    console.log("button clicked");
-
     googleLogin()
       .then((res) => {
         setUser(res.user);
-        console.log(res);
         navigate("/");
+        toast.success("Successfully LogedIn");
       })
       .catch((err) => {
         toast.error(err.message);
