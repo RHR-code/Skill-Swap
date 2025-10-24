@@ -41,7 +41,7 @@ const Signup = () => {
         .then((res) => {
           setUser(res.user);
           updateUser({ displayName, photoURL }).then(() => {
-            setUser({ ...user, displayName, photoURL });
+            setUser({ ...res.user, displayName, photoURL });
             toast.success("Successfully SignedUp");
             setError("");
             navigate("/");
