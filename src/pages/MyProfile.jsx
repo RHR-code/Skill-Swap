@@ -7,7 +7,7 @@ const MyProfile = () => {
   const { user, loader } = use(AuthContext);
   if (loader) <Loader />;
   const { displayName, email, photoURL } = user;
-  console.log(user);
+
 
   return (
     <div className="flex justify-center mt-10 py-10 bg-base-300">

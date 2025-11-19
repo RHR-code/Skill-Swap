@@ -45,7 +45,6 @@ const AuthProvider = ({ children }) => {
         setUser(currentUser);
         setLoading(false);
       } else {
-        console.log("signed out");
         setLoading(false);
       }
     });
@@ -53,7 +52,6 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
-  console.log(user);
 
   const allData = {
     user,

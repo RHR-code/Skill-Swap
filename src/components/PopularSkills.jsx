@@ -7,7 +7,7 @@ const PopularSkills = ({ skillsData }) => {
   const popularSkills = skillsData
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 6);
-  console.log("popularSkills", popularSkills);
+  
 
   return (
     <div data-aos="fade-up">
