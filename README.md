@@ -26,6 +26,40 @@
 - swiper
 - tailwindcss
 
+---
+
+#### Start the development :
+
+```bash
+git clone https://github.com/RHR-code/Skill-Swap.git
+```
+
+#### Change Directory:
+
+```arduino
+cd Skill-Swap
+```
+
+#### Start Webiste:
+
+```arduino
+npm run dev
+```
+
+## 🌈 Screenshots
+
+- **Home Page Banner.**
+
+  ![SkillSwap](https://github.com/RHR-code/Skill-Swap/blob/main/screenshot/Screenshot%202025-11-19%20165951.png?raw=true)
+
+- **All Skills Section.**
+
+  ![SkillSwap](https://github.com/RHR-code/Skill-Swap/blob/main/screenshot/Screenshot%202025-11-19%20170012.png?raw=true)
+
+---
+
+---
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
