@@ -40,7 +40,7 @@ git clone https://github.com/RHR-code/Skill-Swap.git
 cd Skill-Swap
 ```
 
-#### Start Webiste:
+#### Start Website:
 
 ```arduino
 npm run dev
