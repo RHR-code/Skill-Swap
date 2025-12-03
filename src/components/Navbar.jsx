@@ -11,8 +11,11 @@ const Navbar = () => {
   const [isHover, setIsHover] = useState(false);
   const links = (
     <>
-      <NavLink to="/" className="font-semibold text-base">
+      <NavLink to="/" className="font-bold text-base">
         Home
+      </NavLink>
+      <NavLink to="/allskills" className="font-bold text-base">
+        All SKills
       </NavLink>
     </>
   );
@@ -27,7 +30,7 @@ const Navbar = () => {
       });
   };
   return (
-    <div className="navbar bg-base-100 shadow-sm mt-5">
+    <div className="navbar bg-base-100 shadow-sm mb-2 mt-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="pr-2 lg:hidden">

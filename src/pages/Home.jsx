@@ -17,10 +17,10 @@ const Home = () => {
       <section className="mt-20">
         <PopularSkills skillsData={skillsData} />
       </section>
-      <section>
+      <section className="mt-20">
         <TopProvider provider={provider} />
       </section>
-      <section>
+      <section className="mt-10">
         <HowItWorks />
       </section>
       <section className="mt-20">

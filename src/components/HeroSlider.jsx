@@ -8,7 +8,7 @@ const HeroSlider = ({ skillsData }) => {
   return (
     <div>
       <Swiper
-        className="h-[150px] sm:h-[200px] md:h-[300px] lg:h-[500px]"
+        className="h-[150px] sm:h-[200px] md:h-[300px] lg:h-[400px]"
         slidesPerView={2}
         spaceBetween={30}
         navigation={true}
