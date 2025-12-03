@@ -2,12 +2,18 @@ import React from "react";
 import SkillCard from "./SkillCard";
 import { NavLink } from "react-router";
 import { TfiViewList } from "react-icons/tfi";
+import useAxiosSecure from "../hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
-const PopularSkills = ({ skillsData }) => {
-  const popularSkills = skillsData
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 6);
-  
+const PopularSkills = () => {
+  const axiosSecure = useAxiosSecure();
+  const { data: popularSkills = [] } = useQuery({
+    queryKey: ["popular-skills"],
+    queryFn: async () => {
+      const res = await axiosSecure.get("/popular-skills");
+      return res.data;
+    },
+  });
 
   return (
     <div data-aos="fade-up">

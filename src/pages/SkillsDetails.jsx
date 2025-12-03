@@ -1,11 +1,21 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
 import BookSession from "../components/BookSession";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const SkillsDetails = () => {
-  const allSkillData = useLoaderData();
+  // const allSkillData = useLoaderData();
   const { id } = useParams();
-  const skillData = allSkillData.find((skill) => skill.skillId == id);
+  // const skillData = allSkillData.find((skill) => skill.skillId == id);
+  const axiosSecure = useAxiosSecure();
+  const { data: skillData = [] } = useQuery({
+    queryKey: ["skillDetails", id],
+    queryFn: async () => {
+      const res = await axiosSecure.get(`/skills/${id}`);
+      return res.data;
+    },
+  });
   const {
     skillName,
     image,
@@ -22,8 +32,8 @@ const SkillsDetails = () => {
   return (
     <div className="py-10">
       <div className="flex flex-col lg:flex-row  gap-10 bg-base-300 backdrop-blur-lg p-5 pb-40  rounded-2xl ">
-        <div className="flex justify-center">
-          <img className="rounded-2xl" src={image} alt="" />
+        <div className="flex justify-center flex-1">
+          <img className="rounded-2xl w-full" src={image} alt="" />
         </div>
         <div className="flex flex-col  justify-center gap-5">
           <h2 className="font-bold text-xl md:text-3xl lg:text-4xl text-primary">

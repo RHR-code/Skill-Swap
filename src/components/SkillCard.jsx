@@ -3,11 +3,11 @@ import { TbListDetails } from "react-icons/tb";
 import { NavLink } from "react-router";
 
 const SkillCard = ({ skill }) => {
-  const { skillName, image, price, rating, skillId } = skill;
+  const { skillName, image, price, rating, _id } = skill;
   return (
     <div className="bg-base-300 rounded-2xl flex flex-col justify-between ">
       <img
-        className="h-[250px] mb-5 w-full object-cover rounded-2xl"
+        className=" h-[250px] mb-5 w-full object-cover rounded-2xl"
         src={image}
         alt=""
       />
@@ -17,7 +17,7 @@ const SkillCard = ({ skill }) => {
           <p> Price: ${price}</p>
           <p> Rating: {rating}</p>
         </div>
-        <NavLink to={`/skills/${skillId}`} className="btn btn-primary">
+        <NavLink to={`/skills/${_id}`} className="btn btn-primary">
           <TbListDetails /> View Details
         </NavLink>
       </div>

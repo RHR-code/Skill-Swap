@@ -41,12 +41,8 @@ export const Router = createBrowserRouter(
       <Route
         path="/skills/:id"
         hydrateFallbackElement={<Loader />}
-        loader={() => fetch("/skills.json")}
-        element={
-          <PrivateRoute>
-            <SkillsDetails />
-          </PrivateRoute>
-        }
+        // loader={() => fetch("/skills.json")}
+        element={<SkillsDetails />}
       />
       <Route
         path="/myprofile"
