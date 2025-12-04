@@ -7,7 +7,7 @@ const SkillCard = ({ skill }) => {
   return (
     <div className="bg-base-300 rounded-2xl flex flex-col justify-between ">
       <img
-        className=" h-[250px] mb-5 w-full object-cover rounded-2xl"
+        className=" h-[200px] p-2 mb-5 w-full object-cover rounded-2xl"
         src={image}
         alt=""
       />
