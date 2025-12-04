@@ -16,7 +16,7 @@ const PopularSkills = () => {
   });
 
   return (
-    <div data-aos="fade-up">
+    <div>
       <h1 className="text-3xl font-bold text-accent text-center py-10">
         Our Popular Skills
       </h1>

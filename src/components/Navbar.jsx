@@ -11,11 +11,20 @@ const Navbar = () => {
   const [isHover, setIsHover] = useState(false);
   const links = (
     <>
-      <NavLink to="/" className="font-bold text-base">
+      <NavLink to="/" className="font-bold mr-5 text-base">
         Home
       </NavLink>
-      <NavLink to="/allskills" className="font-bold mx-5 text-base">
+      <NavLink to="/allskills" className="font-bold mr-5 text-base">
         All SKills
+      </NavLink>
+      <NavLink to="/about" className="font-bold mr-5 text-base">
+        About Us
+      </NavLink>
+      <NavLink to="/contact" className="font-bold mr-5 text-base">
+        Contact Us
+      </NavLink>
+      <NavLink to="/why-us" className="font-bold mr-5 text-base">
+        Why Us
       </NavLink>
     </>
   );

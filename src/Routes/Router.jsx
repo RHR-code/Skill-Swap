@@ -15,6 +15,9 @@ import MyProfile from "../pages/MyProfile";
 import Loader from "../components/loader";
 import ResetPassword from "../pages/ResetPassword";
 import PageNotFound from "../pages/PageNotFound";
+import About from "../components/About";
+import Contact from "../components/Contact";
+import WhyUs from "../components/WhyUs";
 
 export const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -38,6 +41,9 @@ export const Router = createBrowserRouter(
         loader={() => fetch("/skills.json")}
         Component={AllSkills}
       />
+      <Route path="/about" Component={About} />
+      <Route path="/contact" Component={Contact} />
+      <Route path="/why-us" Component={WhyUs} />
       <Route
         path="/skills/:id"
         hydrateFallbackElement={<Loader />}

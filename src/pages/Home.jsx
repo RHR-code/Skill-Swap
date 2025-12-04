@@ -14,10 +14,10 @@ const Home = () => {
       <section className="py-5 bg-base-300">
         <HeroSlider skillsData={skillsData} />
       </section>
-      <section className="mt-20">
+      <section className="mt-10">
         <PopularSkills skillsData={skillsData} />
       </section>
-      <section className="mt-20">
+      <section className="mt-10">
         <TopProvider provider={provider} />
       </section>
       <section className="mt-10">

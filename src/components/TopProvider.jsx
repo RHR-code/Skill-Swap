@@ -3,7 +3,7 @@ import ProviderCard from "./ProviderCard";
 
 const TopProvider = ({ provider }) => {
   return (
-    <div data-aos="fade-up" className="pb-40">
+    <div data-aos="fade-up" className="pb-20">
       <div>
         <h1 className="text-3xl font-bold text-accent text-center py-10">
           Our Top Rated Providers
